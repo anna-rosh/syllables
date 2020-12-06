@@ -30,6 +30,9 @@ const vowelsData = [
         sound: 'ei'
     },
     {
+        sound: 'ie'
+    },
+    {
         sound: 'eu'
     },
     {
