@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import consonantsData from '../consonantsData';
 import vowelsData from '../vowelsData';
 import Sound from './Sound';
+import '../css/Home.css'
 
 export default function Home() {
     const [consonants, setConsonants] = useState(consonantsData);
@@ -19,18 +20,21 @@ export default function Home() {
 
     return (
         <div className="Home">
-            {/* container with consonants */}
-            <div className="sounds-container">
-                {consonants.map((sound) => (
-                    <Sound key={sound.sound} sound={sound} handleClick={handleClickOnConsonant} />
-                ))}
+            <div className="sounds-fields">
+                {/* container with all consonants */}
+                <div className="sounds-container">
+                    {consonants.map((sound) => (
+                        <Sound key={sound.sound} sound={sound} handleClick={handleClickOnConsonant} />
+                    ))}
+                </div>
+                {/* container with all vowels */}
+                <div className="sounds-container">
+                    {vowels.map((sound) => (
+                        <Sound key={sound.sound} sound={sound} handleClick={handleClickOnVowel} />
+                    ))}
+                </div>
             </div>
-            {/* container with vowels */}
-            <div className="sounds-container">
-                {vowels.map((sound) => (
-                    <Sound key={sound.sound} sound={sound} handleClick={handleClickOnVowel} />
-                ))}
-            </div>
+            
         </div>
     );
 };
