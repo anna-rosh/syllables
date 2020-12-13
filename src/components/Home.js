@@ -12,26 +12,31 @@ export default function Home() {
     const [selectedVowels, setSelectedVowels] = useState([]);
 
     const handleClickOnConsonant = (sound) => {
-        let consonantsLeft = consonants.filter(consonant => consonant.sound !== sound);
+        let consonantsLeft = consonants.filter(consonant => consonant !== sound);
         setConsonants(consonantsLeft);
     }
 
     const handleClickOnVowel = (sound) => {
-        let vowelsLeft = vowels.filter(vowel => vowel.sound !== sound);
+        let vowelsLeft = vowels.filter(vowel => vowel !== sound);
         setVowels(vowelsLeft);
     }
 
     return (
         <div className="Home">
             <div className="sounds-fields">
-                <div className="sounds-container">
-                    <SelectedSound />
-                </div>
+                {/* <div className="sounds-container">
+                    {selectedConsonants.map((sound) => (
+                        <SelectedSound
+                            key={sound.sound}
+                            sound={sound}
+                        />
+                    ))}
+                </div> */}
                 {/* container with all consonants */}
                 <div className="sounds-container">
-                    {consonants.map((sound) => (
+                    {consonants.map((sound, i) => (
                         <Sound
-                            key={sound.sound}
+                            key={i}
                             sound={sound}
                             handleClick={handleClickOnConsonant}
                         />
@@ -39,9 +44,9 @@ export default function Home() {
                 </div>
                 {/* container with all vowels */}
                 <div className="sounds-container">
-                    {vowels.map((sound) => (
+                    {vowels.map((sound, i) => (
                         <Sound
-                            key={sound.sound}
+                            key={i}
                             sound={sound}
                             handleClick={handleClickOnVowel}
                         />
