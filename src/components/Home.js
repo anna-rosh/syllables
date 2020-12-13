@@ -12,26 +12,43 @@ export default function Home() {
     const [selectedVowels, setSelectedVowels] = useState([]);
 
     const handleClickOnConsonant = (sound) => {
+        // delete selected consonants from the state to only render the consonants
+        // that were not selected
         let consonantsLeft = consonants.filter(consonant => consonant !== sound);
         setConsonants(consonantsLeft);
+        // collect the selected consonants to the new arr in the state to render them
+        selectedConsonants.push(sound);
+        setSelectedConsonants(selectedConsonants);
     }
 
     const handleClickOnVowel = (sound) => {
         let vowelsLeft = vowels.filter(vowel => vowel !== sound);
         setVowels(vowelsLeft);
+        selectedVowels.push(sound);
+        setSelectedVowels(selectedVowels);
     }
 
     return (
         <div className="Home">
             <div className="sounds-fields">
-                {/* <div className="sounds-container">
-                    {selectedConsonants.map((sound) => (
+                {/* container with selected consonants */}
+                <div className="sounds-container">
+                    {selectedConsonants.map((sound, i) => (
                         <SelectedSound
-                            key={sound.sound}
+                            key={i}
                             sound={sound}
                         />
                     ))}
-                </div> */}
+                </div>
+                {/* container with selected vowels */}
+                <div className="sounds-container">
+                    {selectedVowels.map((sound, i) => (
+                        <SelectedSound
+                            key={i}
+                            sound={sound}
+                        />
+                    ))}
+                </div>
                 {/* container with all consonants */}
                 <div className="sounds-container">
                     {consonants.map((sound, i) => (

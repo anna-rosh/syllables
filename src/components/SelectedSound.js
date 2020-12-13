@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function SelectedSound() {
+export default function SelectedSound({ sound }) {
     return (
         <div className="Sound">
-            here is SelectedSound component
+            {sound}
         </div>
     );
 }
