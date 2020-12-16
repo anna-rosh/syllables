@@ -1,0 +1,9 @@
+.SelectedSound {
+    border: 1px solid black;
+    border-radius: 5%;
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

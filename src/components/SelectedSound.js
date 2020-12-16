@@ -1,8 +1,9 @@
 import React from 'react';
+import '../css/SelectedSound.css'
 
 export default function SelectedSound({ sound }) {
     return (
-        <div className="Sound">
+        <div className="SelectedSound">
             {sound}
         </div>
     );
