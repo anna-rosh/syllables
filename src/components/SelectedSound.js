@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../css/Sound.css'
 
-export default function SelectedSound({ sound }) {
+export default function SelectedSound({ sound, handleClick }) {
     const [overlayVisible, setOverlayVisivble] = useState(false);
 
     const showOverlay = () => {
@@ -13,7 +13,7 @@ export default function SelectedSound({ sound }) {
     };
 
     return (
-        <div className="Sound" onMouseOver={showOverlay} onMouseLeave={hideOverlay}>
+        <div className="Sound" onMouseOver={showOverlay} onMouseLeave={hideOverlay} onClick={() => handleClick(sound)}>
             <div className="overlay" style={{visibility: overlayVisible ? "visible" : "hidden"}}></div>
             {sound}
         </div>

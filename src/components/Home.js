@@ -28,6 +28,20 @@ export default function Home() {
         setSelectedVowels(selectedVowels);
     }
 
+    const handleClickOnSelectedConsonant = (sound) => {
+        let selectedConsonantsLeft = selectedConsonants.filter(consonant => consonant !== sound);
+        setSelectedConsonants(selectedConsonantsLeft);
+        consonants.push(sound);
+        setConsonants(consonants);
+    }
+
+    const handleClickOnSelectedVowel = (sound) => {
+        let selectedVowelsLeft = selectedVowels.filter(vowel => vowel !== sound);
+        setSelectedVowels(selectedVowelsLeft);
+        vowels.push(sound);
+        setVowels(vowels);
+    }
+
     return (
         <div className="Home">
             <div className="sounds-fields">
@@ -37,6 +51,7 @@ export default function Home() {
                         <SelectedSound
                             key={i}
                             sound={sound}
+                            handleClick={handleClickOnSelectedConsonant}
                         />
                     ))}
                 </div>
@@ -46,6 +61,7 @@ export default function Home() {
                         <SelectedSound
                             key={i}
                             sound={sound}
+                            handleClick={handleClickOnSelectedVowel}
                         />
                     ))}
                 </div>
