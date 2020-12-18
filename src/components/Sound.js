@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Check } from 'react-feather';
 import '../css/Sound.css';
 
 export default function Sound({ sound, handleClick }) {
@@ -14,7 +15,9 @@ export default function Sound({ sound, handleClick }) {
 
     return(
             <div className="Sound" onClick={() => handleClick(sound)} onMouseEnter={showOverlay} onMouseLeave={hideOverlay}>
-                <div className="overlay" style={{visibility: overlayVisible ? "visible" : "hidden"}}></div>
+                <div className="overlay" style={{visibility: overlayVisible ? "visible" : "hidden"}}>
+                    <Check />
+                </div>
                 {sound}
             </div>   
     );
