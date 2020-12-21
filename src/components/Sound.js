@@ -4,6 +4,7 @@ import '../css/Sound.css';
 
 export default function Sound({ sound, handleClick }) {
     const [overlayVisible, setOverlayVisivble] = useState(false);
+    const [soundIsVisible, setSoundIsVisible] = useState(true);
 
     const showOverlay = () => {
         setOverlayVisivble(true);
@@ -13,8 +14,13 @@ export default function Sound({ sound, handleClick }) {
         setOverlayVisivble(false);
     }
 
+    // const hideSound = (sound) => {
+    //     handleClick(sound);
+    //     setSoundIsVisible(false);
+    // }
+
     return(
-            <div className="Sound" onClick={() => handleClick(sound)} onMouseEnter={showOverlay} onMouseLeave={hideOverlay}>
+            <div className="Sound" onClick={() => handleClick(sound)} onMouseEnter={showOverlay} onMouseLeave={hideOverlay} style={{visibility: soundIsVisible ? "visible" : "hidden"}}>
                 <div className="overlay" style={{visibility: overlayVisible ? "visible" : "hidden"}}>
                     <Check />
                 </div>

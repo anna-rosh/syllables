@@ -21,9 +21,22 @@ export default function Home() {
         setSelectedConsonants(selectedConsonants);
     }
 
+    // const handleClickOnVowel = (sound) => {
+    //     let vowelsLeft = vowels.filter(vowel => vowel !== sound);
+    //     setVowels(vowelsLeft);
+    //     selectedVowels.push(sound);
+    //     setSelectedVowels(selectedVowels);
+    // }
+
+    // const handleClickOnConsonant = (sound) => {
+    //     console.log('sound inside the function: ', sound);
+    //     selectedConsonants.push(sound);
+    //     console.log("selected consonants: ", selectedConsonants);
+    //     setSelectedConsonants(selectedConsonants);
+    //     console.log("selected consonants after setting: ", selectedConsonants);
+    // }
+
     const handleClickOnVowel = (sound) => {
-        let vowelsLeft = vowels.filter(vowel => vowel !== sound);
-        setVowels(vowelsLeft);
         selectedVowels.push(sound);
         setSelectedVowels(selectedVowels);
     }
