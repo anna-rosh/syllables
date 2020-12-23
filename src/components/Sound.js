@@ -14,13 +14,13 @@ export default function Sound({ sound, handleClick }) {
         setOverlayVisivble(false);
     }
 
-    // const hideSound = (sound) => {
-    //     handleClick(sound);
-    //     setSoundIsVisible(false);
-    // }
+    const hideSound = () => {
+        handleClick(sound);
+        setSoundIsVisible(false);
+    }
 
     return(
-            <div className="Sound" onClick={() => handleClick(sound)} onMouseEnter={showOverlay} onMouseLeave={hideOverlay} style={{visibility: soundIsVisible ? "visible" : "hidden"}}>
+            <div className="Sound" onClick={hideSound} onMouseEnter={showOverlay} onMouseLeave={hideOverlay} style={{visibility: soundIsVisible ? "visible" : "hidden"}}>
                 <div className="overlay" style={{visibility: overlayVisible ? "visible" : "hidden"}}>
                     <Check />
                 </div>

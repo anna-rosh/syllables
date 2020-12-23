@@ -11,33 +11,15 @@ export default function SoundContainers() {
     const [selectedVowels, setSelectedVowels] = useState([]);
 
     const handleClickOnConsonant = (sound) => {
-        // delete selected consonants from the state to only render the consonants
-        // that were not selected
-        let consonantsLeft = consonants.filter(consonant => consonant !== sound);
-        setConsonants(consonantsLeft);
-        // collect the selected consonants to the new arr in the state to render them
         selectedConsonants.push(sound);
-        setSelectedConsonants(selectedConsonants);
+        let newSelectedConsonants = [...selectedConsonants];
+        setSelectedConsonants(newSelectedConsonants);
     }
-
-    // const handleClickOnVowel = (sound) => {
-    //     let vowelsLeft = vowels.filter(vowel => vowel !== sound);
-    //     setVowels(vowelsLeft);
-    //     selectedVowels.push(sound);
-    //     setSelectedVowels(selectedVowels);
-    // }
-
-    // const handleClickOnConsonant = (sound) => {
-    //     console.log('sound inside the function: ', sound);
-    //     selectedConsonants.push(sound);
-    //     console.log("selected consonants: ", selectedConsonants);
-    //     setSelectedConsonants(selectedConsonants);
-    //     console.log("selected consonants after setting: ", selectedConsonants);
-    // }
 
     const handleClickOnVowel = (sound) => {
         selectedVowels.push(sound);
-        setSelectedVowels(selectedVowels);
+        let newSelectedVowels = [...selectedVowels];
+        setSelectedVowels(newSelectedVowels);
     }
 
     const handleClickOnSelectedConsonant = (sound) => {
