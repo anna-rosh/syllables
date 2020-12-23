@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X } from 'react-feather';
 import '../css/Sound.css'
 
 export default function SelectedSound({ sound, handleClick }) {
     const [overlayVisible, setOverlayVisivble] = useState(false);
+
+    useEffect(() => {
+        console.log('selectedSound did mount: ', sound);
+    });
 
     const showOverlay = () => {
         setOverlayVisivble(true);
